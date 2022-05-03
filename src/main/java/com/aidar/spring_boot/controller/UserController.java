@@ -7,17 +7,17 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import com.aidar.spring_boot.service.UserService;
+import com.aidar.spring_boot.service.UserServiceImpl;
 
 import java.util.List;
 
 @Controller
 public class UserController {
 
-    public final UserService userService;
+    public final UserServiceImpl userService;
 
     @Autowired
-    public UserController(UserService userService) {
+    public UserController(UserServiceImpl userService) {
         this.userService = userService;
     }
 

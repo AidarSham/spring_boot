@@ -1,34 +1,12 @@
 package com.aidar.spring_boot.service;
 
 import com.aidar.spring_boot.model.User;
-import org.springframework.stereotype.Service;
-import com.aidar.spring_boot.repository.UserRepository;
 
 import java.util.List;
 
-@Service
-public class UserService {
-
-    private final UserRepository userRepository;
-
-    public UserService(UserRepository userRepository) {
-        this.userRepository = userRepository;
-    }
-
-    public User findById(Long id) {
-        return userRepository.getOne(id);
-    }
-
-    public List<User> findAll() {
-        return userRepository.findAll();
-    }
-
-    public User saveUser(User user) {
-        return userRepository.save(user);
-    }
-
-    public void deleteById(Long id) {
-        userRepository.deleteById(id);
-    }
-
+public interface UserService {
+    User findById(Long id);
+    List<User> findAll();
+    User saveUser(User user);
+    void deleteById(Long id);
 }
